@@ -8,20 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var msg = "Thank you!"
+    @State var num:Int = 0
     
     var body: some View {
-        VStack{
-            Button("Tap") {
-                if msg == "Thank you!" {
-                    msg = "ありがとう"
-                } else {
-                    msg = "Thank you!"
-                }
-            }.font(.headline)
-            Text("\(msg)")
-                .font(.largeTitle)
-                .padding()
+        HStack {
+            Text("\(num)")
+            Button(action: {num += 1}, label: {
+                Text("Tap").font(.largeTitle)
+            })
         }
     }
 }
