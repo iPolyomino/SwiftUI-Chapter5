@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    let janken = ["グー", "チョキ", "パー"]
+    let g = "グー"
+    let c = "チョキ"
+    let p = "パー"
     @State var te = ""
     
     var body: some View {
         VStack {
             Button("じゃんけん") {
-                te = janken.randomElement()!
+                let num = Int.random(in: 1...3)
+                if num == 1 {
+                    te = g
+                } else if num == 2 {
+                    te = c
+                } else {
+                    te = c
+                }
             }
             .foregroundColor(.white)
             .background(
