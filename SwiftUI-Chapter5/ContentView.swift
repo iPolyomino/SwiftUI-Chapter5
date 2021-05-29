@@ -22,7 +22,7 @@ struct ContentView: View {
                 } else if num == 2 {
                     te = c
                 } else {
-                    te = c
+                    te = p
                 }
             }
             .foregroundColor(.white)
