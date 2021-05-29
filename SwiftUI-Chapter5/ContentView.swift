@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var num: Int = 0
+    
     var body: some View {
-        Button(action: {
-            // ボタンを押すと実行されるところ
-            let num = Int.random(in: 0...100)
-            print(num)
-        }) {
-            // 見た目
-            Text("Random Button")
+        VStack{
+            Button(action: {
+                // ボタンを押すと実行されるところ
+                num = Int.random(in: 0...100)
+                // print(num)
+            }) {
+                // 見た目
+                Text("Random Button")
+            }
+            Text("\(num)")
+                .font(.largeTitle)
+                .padding()
         }
     }
 }
