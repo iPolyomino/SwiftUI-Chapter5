@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var num: Int = 0
+    @State var msg = "Thank you!"
     
     var body: some View {
         VStack{
-            Button(action: {
-                // ボタンを押すと実行されるところ
-                num = Int.random(in: 0...100)
-                // print(num)
-            }) {
-                // 見た目
-                Text("Random Button")
-            }
-            Text("\(num)")
+            Button("Tap") {
+                if msg == "Thank you!" {
+                    msg = "ありがとう"
+                } else {
+                    msg = "Thank you!"
+                }
+            }.font(.headline)
+            Text("\(msg)")
                 .font(.largeTitle)
                 .padding()
         }
